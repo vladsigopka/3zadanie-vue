@@ -15,6 +15,7 @@ body {
     background: rgb(211,211,211);
     text-align: center;
     margin-top: 20px;
+    border-radius: 12px;
     margin-bottom: 20px;
 }
 .main__text {
@@ -100,4 +101,12 @@ textarea {
 }
 .card input {
     width: auto;
+}
+@media screen and (max-width: 950px) {
+    .card textarea {
+        width: 100px;
+    }
+    .card input {
+        width: 100px;
+    }
 }
