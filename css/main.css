@@ -62,8 +62,11 @@ body {
 .btn {
     font-weight: 700;
     color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    width: 150px;
+
     height: 40px;
     border-radius: 3px;
     background: snow;

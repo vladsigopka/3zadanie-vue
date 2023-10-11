@@ -255,7 +255,8 @@ Vue.component('column_4', {
 })
 Vue.component('newCard', {
     template: `
-<section>
+<section style="display: flex;
+    justify-content: center;">
 <a href="#openModal" class="btn btnModal">Создать карточку</a>
 <div id="openModal" class="modal">
   <div class="modal-dialog">
@@ -280,7 +281,10 @@ Vue.component('newCard', {
 
                 <input required type="date" id="point" v-model="deadline">
             </div>
+            <section style="display: flex;
+                        justify-content: center">
             <button type="submit" class="btn" @click="persist">Добавить</button>
+            </section>
             </div>
         </form>
     </div>
