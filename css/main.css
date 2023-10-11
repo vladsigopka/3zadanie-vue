@@ -6,3 +6,21 @@
 body {
     background: rgb(245, 245, 220);
 }
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+    height: auto;
+    border: 1px solid black;
+    background: rgb(211,211,211);
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.main__text {
+    font-size: 36px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 3px;
+    color: black;
+}

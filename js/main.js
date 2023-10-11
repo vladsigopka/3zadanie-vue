@@ -45,3 +45,62 @@ Vue.component('cols', {
         })
     },
 })
+
+Vue.component('column_1', {
+    template: `
+        <section id="main" class="main-alt">
+            <div class="column column__one">
+            <p>Запланированные задачи</p>
+                <div class="card" v-for="card in column_1">
+                   <a @click="deleteCard(card)" style="color: red">Удалить</a>  <a @click="card.edit = true" style="color: green">Редактировать</a>
+                   <div class="tasks">Название: {{ card.name }}</div>
+
+                    <div class="tasks">Описание: {{ card.description }}</div>
+                    <div class="tasks">Дата создания: {{ card.date }}</div>
+                    <div class="tasks">Крайний срок: {{ card.deadline }}</div>
+                    <div class="tasks" v-if="card.editDate != null">Последнее изменение: {{ card.editDate }}</div>
+                                     <a @click="nextColumn(card)" style="color: mediumblue">Следующая колонка</a>
+                    <div class="tasks" v-if="card.edit">
+                        <form @submit.prevent="updateTask(card)">
+                            <p>Новое название: 
+                                <input type="text" v-model="card.name" placeholder="Название">
+                            </p>
+                            <p>Новое описание: 
+                                <textarea v-model="card.description"></textarea>
+                            </p>
+                            <p>
+                                <input type="submit" class="btn" value="Изменить карточку">
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    `,
+    props: {
+        column_1: {
+            type: Array,
+        },
+        column_2: {
+            type: Array,
+        },
+        card: {
+            type: Object
+        },
+    },
+    methods: {
+        nextColumn(card) {
+            this.column_1.splice(this.column_1.indexOf(card), 1)
+            eventBus.$emit('addColumn_2', card)
+        },
+        deleteCard(card) {
+            this.column_1.splice(this.column_1.indexOf(card), 1)
+        },
+        updateTask(card) {
+            card.edit = false
+            this.column_1.push(card)
+            this.column_1.splice(this.column_1.indexOf(card), 1)
+            card.editDate = new Date().toLocaleString()
+        },
+    },
+})
