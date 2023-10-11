@@ -24,3 +24,80 @@ body {
     letter-spacing: 3px;
     color: black;
 }
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+    .card textarea {
+        width: 300px;
+    }
+    .card input {
+        width: 300px;
+    }
+}
+
+.card {
+    border: 2px solid mediumvioletred;
+    margin: 10px;
+}
+.form__control {
+    margin: 15px;
+    text-align: center;
+}
+
+.form__control input[type="text"] {
+    height: 40px;
+    width: 300px;
+    border: 1px solid black;
+    padding-left: 10px;
+    margin: 6px;
+    padding-right: 10px;
+}
+.btn {
+    font-weight: 700;
+    color: black;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 3px;
+    background: snow;
+    transition: 0.2s;
+    border: 2px solid black;
+    margin-top: 10px;
+}
+.btn:hover {
+    background: #97fff8;
+}
+.btn:active {
+    background: snow;
+    color: black;
+    transition: none;
+}
+.column p {
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: black;
+}
+textarea {
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 40px;
+    width: 300px;
+    resize: vertical;
+}
+.addForm label {
+    color: rgb(211,211,211);
+}
+.card textarea {
+    width: auto;
+}
+.card input {
+    width: auto;
+}
